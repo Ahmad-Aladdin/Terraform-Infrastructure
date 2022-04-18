@@ -8,8 +8,8 @@ resource "aws_internet_gateway" "gateway" {
 
 resource "aws_subnet" "sub-pub-1a" {
   vpc_id                  = aws_vpc.myVPC.id
-  cidr_block              = "10.0.0.0/24"
-  availability_zone       = "us-east-1a"
+  cidr_block              = var.public_subnet_1a_cider
+  availability_zone       = var.availability_zone_1a
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -19,8 +19,8 @@ resource "aws_subnet" "sub-pub-1a" {
 
 resource "aws_subnet" "sub-pri-1a" {
   vpc_id                  = aws_vpc.myVPC.id
-  cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-1a"
+  cidr_block              = var.private_subnet_1a_cider
+  availability_zone       = var.availability_zone_1a
   map_public_ip_on_launch = "false"
 
   tags = {
@@ -31,8 +31,8 @@ resource "aws_subnet" "sub-pri-1a" {
 
 resource "aws_subnet" "sub-pub-1b" {
   vpc_id                  = aws_vpc.myVPC.id
-  cidr_block              = "10.0.2.0/24"
-  availability_zone       = "us-east-1b"
+  cidr_block              = var.public_subnet_1b_cider
+  availability_zone       = var.availability_zone_1b
   map_public_ip_on_launch = "true"
 
   tags = {
@@ -42,8 +42,8 @@ resource "aws_subnet" "sub-pub-1b" {
 
 resource "aws_subnet" "sub-pri-1b" {
   vpc_id                  = aws_vpc.myVPC.id
-  cidr_block              = "10.0.3.0/24"
-  availability_zone       = "us-east-1b"
+  cidr_block              = var.private_subnet_1b_cider
+  availability_zone       = var.availability_zone_1b
   map_public_ip_on_launch = "false"
 
   tags = {
@@ -92,7 +92,7 @@ resource "aws_nat_gateway" "nat-gateway-1" {
   subnet_id     = aws_subnet.sub-pub-1a.id
 
   tags = {
-    Name = "NAT-GW-1a"
+    Name = "${var.workSpace}-NAT-GW-1a"
   }
 }
 
@@ -102,6 +102,6 @@ resource "aws_nat_gateway" "nat-gateway-2" {
   subnet_id     = aws_subnet.sub-pub-1b.id
 
   tags = {
-    Name = "NAT-GW-1b"
+    Name = "${var.workSpace}-NAT-GW-1b"
   }
 }

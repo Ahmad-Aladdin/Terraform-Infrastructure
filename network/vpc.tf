@@ -3,6 +3,6 @@ resource "aws_vpc" "myVPC" {
   instance_tenancy     = "default"
   enable_dns_hostnames = true
   tags = {
-    Name = "Cloud-VPC"
+    Name = var.vpc_name
   }
 }
