@@ -3,7 +3,7 @@ resource "aws_db_instance" "my_rds2" {
   engine                 = "mysql"
   engine_version         = "5.7"
   instance_class         = "db.t2.micro"
-  name                   = "my_db"
+  db_name                = "my_db"
   username               = "hmada"
   password               = "admin12345"
   skip_final_snapshot    = true
