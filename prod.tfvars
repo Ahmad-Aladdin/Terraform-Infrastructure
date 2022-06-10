@@ -16,10 +16,10 @@ private_subnet_1b_cider = "10.0.4.0/24"
 
 
 
-availability_zone_1a = "us-east-1a"
-availability_zone_1b = "us-east-1b"
+availability_zone_1a = "eu-central-1-1a"
+availability_zone_1b = "eu-central-1-1b"
 
-region = "us-east-1"
+region = "eu-central-1"
 
 workSpace = "prod"
 
