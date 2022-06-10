@@ -16,8 +16,8 @@ private_subnet_1b_cider = "10.0.4.0/24"
 
 
 
-availability_zone_1a = "eu-central-1-1a"
-availability_zone_1b = "eu-central-1-1b"
+availability_zone_1a = "eu-central-1a"
+availability_zone_1b = "eu-central-1b"
 
 region = "eu-central-1"
 
