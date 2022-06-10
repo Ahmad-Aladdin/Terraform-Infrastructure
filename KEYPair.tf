@@ -5,19 +5,19 @@ resource "tls_private_key" "private_key_pair" {
 }
 
 resource "aws_key_pair" "public_key_pair" {
-  key_name   = "public_key_pair"
+  key_name   = "publlic_key_pair"
   public_key = tls_private_key.private_key_pair.public_key_openssh
 }
 
 resource "aws_secretsmanager_secret" "private_key" {
-  name                    = "private-key"
+  name                    = "privatte-key"
   description             = "ssh key"
   recovery_window_in_days = 0
 }
 
 
 resource "aws_secretsmanager_secret" "public_key" {
-  name                    = "public-key"
+  name                    = "publlic-key"
   description             = " public key"
   recovery_window_in_days = 0
 }

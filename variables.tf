@@ -6,9 +6,6 @@ variable "vpc_cider" {
   type = string
 }
 
-
-
-
 variable "public_subnet_1a" {
   type = string
 }
