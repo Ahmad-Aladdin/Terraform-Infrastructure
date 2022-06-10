@@ -23,4 +23,4 @@ region = "eu-central-1"
 
 workSpace = "prod"
 
-ami = "ami-073c944d45ffb4f27"
+ami = "ami-02584c1c9d05efa69"
