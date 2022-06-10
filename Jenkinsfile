@@ -16,7 +16,7 @@ pipeline {
                     echo 'initializing terraform ...'
                     withAWS(credentials: 'aws') {
                         sh 'terraform init -reconfigure'
-                        sh "terraform destroy --var-file ${deploy_env}.tfvars -auto-approve"
+                        sh "terraform apply --var-file ${deploy_env}.tfvars -auto-approve"
                     }
                }
            }
