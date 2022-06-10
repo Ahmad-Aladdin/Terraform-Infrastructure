@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "subnet-group" {
-  name       = "subnet-group"
+  name       = "db-subnet-group"
   subnet_ids = [module.network.private_subnet_1a-ID, module.network.private_subnet_1b-ID]
 
   tags = {
